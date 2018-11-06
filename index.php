@@ -1,7 +1,10 @@
 <?php
-			
-include_once "_functions/bd_connect.php";
 
+session_start();
+?> 
+
+<?php			
+include_once "_functions/bd_connect.php";
 
 	if(isset($_GET['monFormulaire'])){
 		$accountName 		= $_GET['accountName'];
@@ -22,17 +25,20 @@ include_once "_functions/bd_connect.php";
 		}
 		else{
 			$db = db_connect();
+			// INSERT 
+
+			$req = $db -> prepare("INSERT INTO BankAccount(id_users,account_name,account_type,account_balance,account_currency)VALUES(:id_users,:account_name,:account_type,:account_balance,:account_currency);");
+
+			$req -> execute(array("id_users" => 1,"account_name" => $_GET['account_name'], "account_type" => $_GET['account_type'],
+						  "account_balance" => $_GET['account_balance'],"account_currency" => $_GET['account_currency'])); 
+
 			echo "Votre formulaire a bien été pris en compte";
 		}
 	}
 
+	
+
 ?> 
-
-
-
-
-
-
 
 
 	<form method="GET" action="index.php" id="formulaire" class="monForm">

@@ -45,9 +45,11 @@ ENGINE=INNODB DEFAULT CHARSET= 'utf8';
 
 -------------------------------------------------------------------------------------------------------------------------------------------
 
+ALTER TABLE BankAccount
+ADD FOREIGN KEY (id_users) REFERENCES Users(id) ON DELETE CASCADE ON UPDATE CASCADE;
 
-
-
+ALTER TABLE Operation 
+ADD FOREIGN KEY (id_account) REFERENCES BankAccount(id) ON DELETE CASCADE ON UPDATE CASCADE;
  
  	
 
