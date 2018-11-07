@@ -17,7 +17,7 @@ CREATE TABLE BankAccount (
 	id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
 	id_users INT(10) UNSIGNED NULL DEFAULT NULL,
 	account_name VARCHAR(45) NOT NULL,
-	account_type ENUM("Current","Saving","joint_account") DEFAULT "Current",
+	account_type ENUM("compte_suisse","courant","epargne","compte_joint") DEFAULT "compte_suisse",
 	account_balance FLOAT(10,2) NOT NULL,
 	account_currency ENUM("USD","EUR"),
 	PRIMARY KEY (id)
@@ -45,9 +45,11 @@ ENGINE=INNODB DEFAULT CHARSET= 'utf8';
 
 -------------------------------------------------------------------------------------------------------------------------------------------
 
+ALTER TABLE BankAccount
+ADD FOREIGN KEY (id_users) REFERENCES Users(id) ON DELETE CASCADE ON UPDATE CASCADE;
 
-
-
+ALTER TABLE Operation 
+ADD FOREIGN KEY (id_account) REFERENCES BankAccount(id) ON DELETE CASCADE ON UPDATE CASCADE;
  
  	
 
