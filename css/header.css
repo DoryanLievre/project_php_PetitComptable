@@ -1,0 +1,14 @@
+.head{
+    width:100%;
+	background-color: #ce062B;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    color: white;
+    height: 50px;
+    padding-top: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    
+}

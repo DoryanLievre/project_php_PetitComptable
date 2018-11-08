@@ -1,0 +1,38 @@
+
+body {font-family: 'Open Sans', sans-serif;}
+
+
+.envoyer{
+
+	color: white;
+	background-color: #CE062B;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	font-size: 15px;
+	border-radius: 20px;
+	padding: 15px;
+
+}
+
+
+#form{
+
+	border: 5px #F5F5F5 groove;
+    border-radius:15px;
+	
+	background-color: white;
+
+	
+	margin:auto;
+	margin-left: 250px;
+	margin-right:250px;
+	margin-top: 16px;
+	text-align: center;
+
+	justify-content: center;
+	align-items: center;
+	min-width: 175px;
+
+}
+
+
