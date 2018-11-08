@@ -17,18 +17,13 @@ function verifSelect(){
 	}
 }
 verifSelect();
-?> 
+?>
 
 
 <!-- Formulaire de suppression de compte -->
-<link rel="stylesheet" type="text/css" href="./css/formulaire_style.css">
-<link rel="stylesheet" type="text/css" href="./css/header.css">
-<body>
-	<header class="head"> 
-		Futur Project
-	</header>
-	<h1>Choisissez le compte à supprimer:</h1>
-	<form method="POST"name="deleteAccount" id="formulaire" class="monForm">
+
+	<label for="deleteAccount">Vous pouvez supprimer vos comptes:</label>
+	<form method="POST"name="deleteAccount">
 		<select name="select">
 			<?php
 			foreach(getBankData() as $row){
@@ -36,5 +31,5 @@ verifSelect();
 			}
 			?> 
 		</select>
-		<input type="submit" class="envoyer name="supprimer" value="supprimer">
+		<input type="submit" name="supprimer" value="supprimer">
 	</form>

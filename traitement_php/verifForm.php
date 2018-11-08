@@ -6,6 +6,7 @@ session_start();
 <?php 
 // va chercher les fonctions dans l'arborescence
 include_once "./../_functions/db_connect.php";
+include_once "./../_functions/editForm.php";
 include_once "./../_functions/countAccount.php";
 ?> 
 
@@ -51,6 +52,6 @@ include_once "./../_functions/countAccount.php";
 			}
 		}
 
-		header('Location: ../base.php?message=' . $message);
+		header('Location: ../index.php?message=' . $message);
 	}
 
